@@ -1,23 +1,3 @@
-# Exercise 0: Example
-#
-# This is a practice exercise to help you understand how to write code "inside" a provided Python function.
-#
-# We'll create a function that checks a condition and prints a specific greeting message based on that condition.
-#
-# Requirements:
-# - The function is named `print_greeting`.
-# - Inside the function, declare a variable `python_is_fun` and set it to `True`.
-# - Use a conditional statement to check if `python_is_fun` is `True`.
-# - If `python_is_fun` is `True`, print the message "Python is fun!"
-
-def print_greeting():
-    python_is_fun = True
-    if python_is_fun:
-        print("Python is fun!")
-
-print_greeting()
-
-
 # Exercise 1: Vowel or Consonant
 #
 # Write a Python function named `check_letter` that determines if a given letter
@@ -35,33 +15,12 @@ print_greeting()
 # - Utilize the `in` operator to check for vowels.
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
-# First Attempt
-
 def check_letter():
-    # Your control flow logic goes here
-    x = input('enter a letter from a-z or A-Z').lower()
-    print(f'the user entered letter {letter}')
-
-   is_vowel(x,["a", "e", "i", "o", "u"])
-    if  is_vowel:
-        print("The letter {x} is a vowel")
-    elif !is_vowel:
-        print("The letter {x} is a consonent")
-    else:
-        print("non available entry")
-
-
-# Call the function
-check_letter()
-
-# Second Attempt
-
-def check_letter():
-    x = input("Enter a letter from a-z or A-Z").lower()
+    x = input("Enter a letter from a-z or A-Z: ").lower()
     print(f'the user entered letter {x}')
 
     if x in ["a", "e", "i", "o", "u"]:
-         print(f"The letter {x} is a vowel")
+        print(f"The letter {x} is a vowel")
     elif x not in ["a", "e", "i", "o", "u"]:
         print(f"The letter {x} is a consonent")
     else:
@@ -85,26 +44,25 @@ check_letter()
 # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
+
 def check_voting_eligibility():
     # Your control flow logic goes here
-age = int(input("Please enter your age: "))
-voting_age = True if age > 18 else False
-    if True:
-        print(f"The person is {voting_age} and can vote")
+    age = int(input("Please enter your age: "))
+    voting_age = True if age >= 18 else False
+    if voting_age:
+        print(f"The personcan vote")
     else:
         print(f"the person can't vote, is too young")
 
-
-# Call the function
 check_voting_eligibility()
 
 
 def check_voting_eligibility():
     # Your control flow logic goes here
-age = int(input("Please enter your age: "))
-voting_age = "You can vote" if age > 18 else "You can't vote"
+    age = int(input("Please enter your age: "))
+    voting_age = "You can vote" if age >= 18 else "You can't vote"
+    print(voting_age)
 
-# Call the function
 check_voting_eligibility()
 
 # Exercise 3: Calculate Dog Years
@@ -127,16 +85,16 @@ check_voting_eligibility()
 
 def calculate_dog_years():
     # Your control flow logic goes here
-dog_age = int(input("Input a dog's age: "))
+    dog_age = int(input("Input a dog's age: "))
 
-if dog_age = 1:
-    print("The dog's age in dog years is 10.")
-elif dog_age = 2:
-    print("The dog's age in dog years is 20.")
-elif dog_age > 2:
-    print(f"The dog's age in dog years is {20 + (dog_age -2) *7}")
-else:
-    print("NA")
+    if dog_age == 1:
+        print("The dog's age in dog years is 10.")
+    elif dog_age == 2:
+        print("The dog's age in dog years is 20.")
+    elif dog_age > 2:
+        print(f"The dog's age in dog years is {20 + (dog_age -2) *7}")
+    else:
+        print("NA")
 # Call the function
 calculate_dog_years()
 
@@ -200,22 +158,20 @@ def determine_season():
     day = int(input("Enter the day of the month:"))
 
 
-   if (month == "Dec" and 21 <= day <= 31) or (month == "Jan") or (month == "Feb") or (month == "Mar" and 1 <= day <= 19):
-    print(f"{month} + {day} is in Winter")
+    if (month == "Dec" and 21 <= day <= 31) or (month == "Jan") or (month == "Feb") or (month == "Mar" and 1 <= day <= 19):
+        print(f"{month} + {day} is in Winter")
 
-   elif (month == "Mar" and 20 <= day <=31) or (month == "Apr") or (month == "May") or (month == "Jun" and  1<= day <= 20):
-    print(f"{month} + {day} is in Spring")
+    elif (month == "Mar" and 20 <= day <=31) or (month == "Apr") or (month == "May") or (month == "Jun" and  1<= day <= 20):
+        print(f"{month} + {day} is in Spring")
 
-   elif (month == "Jun" and 21 <= day <= 30) or (month == "Jul") or (month == "Aug") or (month == "Sep" and 1 <= day <= 21):
-    print(f"{month} {day} is in Summer")
+    elif (month == "Jun" and 21 <= day <= 30) or (month == "Jul") or (month == "Aug") or (month == "Sep" and 1 <= day <= 21):
+        print(f"{month} {day} is in Summer")
 
     elif (month == "Sep" and 22 <= day <= 30) or (month == "Oct") or (month == "Nov") or (month == "Dec" and 1 <= day <= 20):
         print(f"{month} {day} is in Fall")
     else:
         print("This is not a valid entry")
 
-
-# Call the function
 determine_season()
 
 
@@ -238,13 +194,12 @@ determine_season()
 # Hints:
 # - Use a for loop with a range to limit guesses to five.
 # - Use logical AND, OR, and NOT to check conditions and provide appropriate feedback.
-
+import random
 def guess_number():
-    # Your control flow logic goes here
-    number = random.randit(1, 100)
-    number_guessed = int(input("Guess a number between 1 to 100"))
 
     for guess in range(5):
+        number = random.randint(1, 100)
+        number_guessed = int(input("Guess a number between 1 to 100: "))
         if number > number_guessed:
             print("Guess is too low")
         elif number < number_guessed:
